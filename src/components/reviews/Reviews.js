@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Reviews = () => {
-    return {
+class Reviews extends Component {
+    renderReviews() {
+        return this.props.reviews.map((review) => {
+            return (
 
+            )
+        })
     }
 }
 
