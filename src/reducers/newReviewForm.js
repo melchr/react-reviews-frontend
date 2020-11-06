@@ -8,7 +8,10 @@ const initialState = {
 export default (state=initialState, action) => {
     switch (action.type) {
         case "UPDATE_NEW_REVIEW_FORM":
-            return action.formData
+            return {
+                ...state,
+                [action.formData.name]: action.formData.value
+            }
         case "RESET_NEW_REVIEW_FORM":
             return initialState
         default:
