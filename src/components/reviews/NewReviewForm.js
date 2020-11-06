@@ -1,15 +1,22 @@
 import React from 'react'
 import { updateNewReviewForm } from '../../actions/newReviewForm'
+import { createReview } from '../../actions/reviewsFetch'
 import { connect } from 'react-redux'
 
-const NewReviewForm = ({title, content, genre, img_url, updateNewReviewForm}) => {
+const NewReviewForm = ({ formData, updateNewReviewForm, createReview }) => {
+    const {title, content, genre, imgUrl} = formData
 
     const handleChange = event => {
         const { name, value } = event.target
         updateNewReviewForm(name, value)
     }
 
-    const handleSubmit = event => event.preventDefault()
+    const handleSubmit = event => {
+        event.preventDefault()
+        createReview({
+            ...formData
+        })
+    }
 
     return (
     <form onSubmit={handleSubmit}>
@@ -33,9 +40,9 @@ const NewReviewForm = ({title, content, genre, img_url, updateNewReviewForm}) =>
         /><br/>
         <input
             placeholder="Album Cover URL"
-            name="img_url"
+            name="imgUrl"
             onChange={handleChange}
-            value={img_url}
+            value={imgUrl}
         />
         <br/>
         <input type="submit" value="Create Review"/>
@@ -43,13 +50,9 @@ const NewReviewForm = ({title, content, genre, img_url, updateNewReviewForm}) =>
 )}
 
 const mapStateToProps = state => {
-    const { title, content, genre, img_url } = state.newReviewForm
     return {
-        title,
-        content,
-        genre,
-        img_url
+        formData: state.newReviewForm
     }
 }
 
-export default connect(mapStateToProps, { updateNewReviewForm })(NewReviewForm)
+export default connect(mapStateToProps, { updateNewReviewForm, createReview })(NewReviewForm)
