@@ -1,7 +1,7 @@
 export default function reviewReducer (state = {reviews: [], comments: []}, action) {
     switch (action.type) {
-        case 'REVIEWS_FETCH':
-            return {...state, reviews: action.payload}
+        case "GET_REVIEWS":
+            return {...state, reviews: action.reviews}
         default:
             return state
     }
