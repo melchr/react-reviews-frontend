@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import ReviewList from './reviews/ReviewList'
 
 const MainContainer = () => {
@@ -9,4 +9,4 @@ const MainContainer = () => {
     )
 }
 
-export default MainContainer
+export default MainContainer */
