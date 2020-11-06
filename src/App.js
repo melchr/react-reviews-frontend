@@ -17,7 +17,7 @@ class App extends React.Component {
       <button><Link to="/app/v1/reviews">View All Reviews</Link></button>
       <ReviewsContainer />
       <Route exact path='/app/v1/reviews' component={ReviewList}></Route>
-      <Route exact path='/reviews/new' component={NewReviewForm}/>
+      <Route exact path='/app/v1/reviews/new' component={NewReviewForm}/>
     </div>
     </Router>
   );
