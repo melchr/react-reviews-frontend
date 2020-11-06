@@ -20,7 +20,7 @@ class ReviewsContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    reviews: state.reviews.reviews
+    reviews: state.reviews.reviews //very important line i could not figure out, caused by the way i created/imported/exported the store
   };
 };
 
