@@ -3,8 +3,9 @@ import React from 'react'
 const ReviewCard = ({ review }) => {
   return (
     <div>
-    <p>{review.attributes.title}</p>
+    <p><strong>{review.attributes.title}</strong></p>
     <p>{review.attributes.content}</p>
+    <br></br>
     </div>
   )
 }
