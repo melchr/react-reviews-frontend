@@ -1,3 +1,5 @@
+//import { resetNewReviewForm } from './newReviewForm'
+
 export const getReviews = reviews => {
     return {
         type: "GET_REVIEWS",
@@ -45,5 +47,8 @@ export const createReview = reviewData => {
         })
             .then(response => response.json())
             .then(console.log)
+/*             .then(review => {
+                dispatch(addReview(review))
+                dispatch(resetNewReviewForm()) */
     }
 }
