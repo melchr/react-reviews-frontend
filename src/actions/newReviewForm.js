@@ -7,3 +7,9 @@ export const updateNewReviewForm = (name, value) => {
 
     }
 }
+
+export const resetNewReviewForm = () => {
+    return {
+        type: "RESET_NEW_REVIEW_FORM"
+    }
+}
