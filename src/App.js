@@ -3,26 +3,38 @@ import './App.css';
 import ReviewsContainer from './containers/ReviewsContainer';
 import ReviewList from './components/reviews/ReviewList'
 import NewReviewForm from './components/reviews/NewReviewForm'
+import Review from './components/reviews/Review'
 import Header from './components/Header'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
 
 class App extends React.Component {
 
   render(){
+    const { reviews } = this.props
   return (
-    <Router>
     <div className="App">
       <Header />
-      <Link to="/">Home</Link> |
-      <Link to="/app/v1/reviews">View All Reviews</Link> | 
-      <Link to="/app/v1/reviews/new">New Review</Link>
       <ReviewsContainer />
+      <Switch>
+      <Route exact path='/'></Route>
       <Route exact path='/app/v1/reviews' component={ReviewList}></Route>
       <Route exact path='/app/v1/reviews/new' component={NewReviewForm}/>
+      <Route exact path='/app/v1/reviews/:id' render={props => {
+        const review = reviews.find(review => review.id === props.match.params.id )
+          return <Review review={review} {...props}/>
+        }
+      }/>
+      </Switch>
     </div>
-    </Router>
   );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return ({
+    reviews: state.reviews.reviews
+  })
+}
+
+export default withRouter(connect(mapStateToProps)(App))
