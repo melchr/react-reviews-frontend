@@ -1,6 +1,6 @@
 # SPITE HOUSE V2
 
-This single page application was built on a Rails API backend [found here](https://github.com/melchr/react-reviews-backend).
+This single page application was built on a Rails API backend [found here](https://github.com/melchr/react-reviews-backend) and a React-Redux frontend.
 
 Spite House is, simply put, a negative music review website. Reviews are created by yours truly, (also using the Faker gem in Rails), and future functionality will include a proper domain (spite-house.com), other user input as well as ability to comment.
 
