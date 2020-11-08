@@ -49,6 +49,8 @@ const NewReviewForm = ({ formData, updateNewReviewForm, createReview }) => {
         <br/>
         <input type="submit" value="Create Review"/>
     </form>
+    <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+    <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
     </div>
 )}
 
