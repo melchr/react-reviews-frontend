@@ -50,7 +50,7 @@ const NewReviewForm = ({ formData, updateNewReviewForm, createReview }) => {
         <input type="submit" value="Create Review"/>
     </form>
     <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-    <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+    <br></br><br></br><br></br><br></br><br></br><br></br>
     </div>
 )}
 
