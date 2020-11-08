@@ -7,11 +7,17 @@ Spite House is, simply put, a negative music review website. Reviews are created
 # Technologies Used
 
 JavaScript
+
 Ruby on Rails API Framework
+
 SQLite3 Database
+
 React
+
 Redux
+
 Faker Gem for filler text/images
+
 
 # Installation
 
