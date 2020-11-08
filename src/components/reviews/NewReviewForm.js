@@ -19,6 +19,8 @@ const NewReviewForm = ({ formData, updateNewReviewForm, createReview }) => {
     }
 
     return (
+        <div>
+        <br></br>
     <form onSubmit={handleSubmit}>
         <input
             placeholder="Title"
@@ -47,6 +49,7 @@ const NewReviewForm = ({ formData, updateNewReviewForm, createReview }) => {
         <br/>
         <input type="submit" value="Create Review"/>
     </form>
+    </div>
 )}
 
 const mapStateToProps = state => {
