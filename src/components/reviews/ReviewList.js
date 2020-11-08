@@ -4,8 +4,14 @@ import { Link } from 'react-router-dom'
 
 const ReviewList = props => {
   const reviewCards = props.reviews.length > 0 ?
-    props.reviews.map(r => (<p key={r.id}><Link to={`/app/v1/reviews/${r.id}`}>{r.attributes.title}</Link></p>)) :
+    props.reviews.map(r => (
+    <div>
+    <br></br>
+      <p key={r.id}><Link className="App-link" to={`/app/v1/reviews/${r.id}`}>{r.attributes.title}</Link>
+      </p>
+    </div>)) :
     null
+
 
   return reviewCards
 }
