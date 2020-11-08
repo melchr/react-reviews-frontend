@@ -5,6 +5,8 @@ import ReviewList from './components/reviews/ReviewList'
 import NewReviewForm from './components/reviews/NewReviewForm'
 import Review from './components/reviews/Review'
 import Header from './components/Header'
+import Home from './components/Home'
+import Footer from './components/Footer'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 
@@ -17,7 +19,7 @@ class App extends React.Component {
       <Header />
       <ReviewsContainer />
       <Switch>
-      <Route exact path='/'></Route>
+      <Route exact path='/' component={Home}></Route>
       <Route exact path='/app/v1/reviews' component={ReviewList}></Route>
       <Route exact path='/app/v1/reviews/new' component={NewReviewForm}/>
       <Route exact path='/app/v1/reviews/:id' render={props => {
@@ -26,6 +28,8 @@ class App extends React.Component {
         }
       }/>
       </Switch>
+      <br></br>
+      <Footer />
     </div>
   );
   }
