@@ -1,4 +1,4 @@
-//import { resetNewReviewForm } from './newReviewForm'
+import { resetNewReviewForm } from './newReviewForm'
 
 export const getReviews = reviews => {
     return {
@@ -46,9 +46,9 @@ export const createReview = reviewData => {
             body: JSON.stringify(sendableReviewData)
         })
             .then(response => response.json())
-            .then(console.log)
-/*             .then(review => {
+            .then(review => {
                 dispatch(addReview(review))
-                dispatch(resetNewReviewForm()) */
+                dispatch(resetNewReviewForm())
+            })
     }
 }
