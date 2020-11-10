@@ -3,7 +3,7 @@ export default function reviewReducer (state = {reviews: [], comments: []}, acti
         case "GET_REVIEWS":
             return {...state, reviews: action.reviews}
         case "ADD_REVIEW":
-            return state.reviews.concat(action.reviews)
+            return {...state, ...action.reviews}
         default:
             return state
     }
