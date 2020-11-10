@@ -2,7 +2,7 @@ const initialState = {
     title: "",
     content: "",
     genre: "",
-    img_url: "",
+    imgUrl: "",
 }
 
 export default (state=initialState, action) => {
