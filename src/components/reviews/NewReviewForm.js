@@ -3,7 +3,7 @@ import { updateNewReviewForm } from '../../actions/newReviewForm'
 import { createReview } from '../../actions/reviewsFetch'
 import { connect } from 'react-redux'
 
-const NewReviewForm = ({ formData, updateNewReviewForm, createReview }) => {
+const NewReviewForm = ({ formData, history, updateNewReviewForm, createReview }) => {
     const {title, content, genre, imgUrl} = formData
 
     const handleChange = event => {
@@ -15,7 +15,7 @@ const NewReviewForm = ({ formData, updateNewReviewForm, createReview }) => {
         event.preventDefault()
         createReview({
             ...formData
-        })
+        }, history)
     }
 
     return (

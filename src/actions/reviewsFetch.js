@@ -28,7 +28,7 @@ export const reviewsFetch = () => {
     }
 }
 
-export const createReview = reviewData => {
+export const createReview = (reviewData, history) => {
     return dispatch => {
         const sendableReviewData = {
             review: {
@@ -48,6 +48,7 @@ export const createReview = reviewData => {
             .then(response => response.json())
             .then(review => {
                 dispatch(addReview(review))
+                history.push(`/reviews/${review.data.id}`)
                 dispatch(resetNewReviewForm())
             })
     }
